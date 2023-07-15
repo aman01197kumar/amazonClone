@@ -1,0 +1,67 @@
+.ManageProfile__profile__container {
+  position: absolute;
+  top: 3.5rem;
+  border: 1px solid rgb(114, 111, 111);
+  border-radius: 8px;
+  padding: 1rem;
+  //   left: 41rem;
+  //   width: 30%;
+  width: 403%;
+  left: -20rem;
+  .ManageProfile__profile__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // color: white;
+    background: rgb(231, 244, 245);
+    padding: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    font-size: 12px;
+    .ManageProfile__profile__wrapper__profile {
+      color: rgb(68, 68, 68);
+    }
+    .ManageProfile__profile__wrapper__manage {
+      color: rgb(0, 113, 133);
+    }
+  }
+  .ManageProfile__profile__lower__section__wrapper {
+    display: flex;
+    color: black;
+    margin-top: 1rem;
+    justify-content: space-between;
+    .ManageProfile__profile__left__section {
+      border-right: 0.2px solid rgb(199, 197, 197);
+      width: 55%;
+      font-family: inherit;
+      .ManageProfile__profile__section__header {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .ManageProfile__profile__section__content {
+        font-size: 13px;
+        font-weight: 400;
+        color: #444;
+        .ManageProfile__profile__section__item__container {
+          padding-top: 0.5rem;
+        }
+      }
+    }
+    .ManageProfile__profile__right__section {
+      font-family: inherit;
+      line-height: 16px;
+      .ManageProfile__profile__section__header {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .ManageProfile__profile__section__content {
+        font-size: 13px;
+        font-weight: 400;
+        color: #444;
+        .ManageProfile__profile__section__item__container {
+          padding-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

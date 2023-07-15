@@ -1,0 +1,23 @@
+.SubHeader__wrapper {
+  background-color: #232f3e;
+  color: white;
+  font-size: 14px;
+  .SubHeader__container {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    padding: 0.5rem;
+    margin-left: 0.2rem;
+  }
+  .SubHeader__all__container {
+    font-weight: 600;
+  }
+  .SubHeader__browsing__history__container {
+    display: flex;
+    align-items: flex-end;
+    .SubHeader__browsing__history__icon {
+      font-size: 10px;
+      //   margin-top: 0.5rem;
+    }
+  }
+}

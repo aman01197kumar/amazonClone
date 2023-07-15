@@ -1,0 +1,96 @@
+.SearchBar__wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #131921;
+  justify-content: space-around;
+  .SearchBar__amazon__icon {
+    margin-top: 0.5rem;
+    height: 50px;
+    display: flex;
+  }
+  .SearchBar__delivery__country__wrapper {
+    font-size: 14px;
+    color: #a9b5c1;
+    .SearchBar__delivery__country__container {
+      color: white;
+      font-weight: 700;
+    }
+  }
+
+  .Searchbar__container__wrapper {
+    width: 50%;
+    .SearchBar__container {
+      display: flex;
+      align-items: center;
+      .SearchBar__dropdown__btn {
+        padding: 0.508rem;
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        background-color: #f3f3f3;
+      }
+      .SearchBar__input__field {
+        width: 100%;
+        border: none;
+        padding: 0.593rem;
+        color: grey;
+      }
+      .SearchBar__SearchBtn {
+        background-color: #febd69;
+        padding: 0.4rem 0.7rem;
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+      }
+    }
+  }
+  .SearchBar__dropdown__country__code {
+    .SearchBar__dropdown__country__code_btn {
+      background: transparent;
+      border: 1x solid;
+      padding: 14px 0px;
+      border: none;
+      color: white;
+    }
+  }
+  .SearchBar__dropdown__login__greetings__wrapper {
+    color: white;
+    position: relative;
+    .SearchBar__dropdown__login__greeetings__container {
+      display: flex;
+      align-items: end;
+      .SearchBar__dropdown__login__greetings {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+      }
+      .SearchBar__dropdown__login__greetings__span {
+        font-weight: 700;
+      }
+    }
+  }
+  .SearchBar__return__wrapper {
+    .SearchBar__return__container {
+      display: flex;
+      color: white;
+      flex-direction: column;
+      font-size: 14px;
+      .SearchBar__dropdown__login__greetings__span {
+        font-weight: 700;
+      }
+    }
+  }
+  .SearchBar__cart__icon {
+    color: white;
+    font-weight: 700;
+    .SearchBar__cart__icons {
+      font-size: 26px;
+    }
+  }
+  .SearchBar__amazon__icon:hover,
+  .SearchBar__delivery__country__wrapper:hover,
+  .SearchBar__dropdown__country__code:hover,
+  .SearchBar__dropdown__login__greetings__wrapper:hover,
+  .SearchBar__return__wrapper:hover,
+  .SearchBar__cart__icon:hover {
+    border: 1px solid white;
+  }
+}
