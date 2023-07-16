@@ -1,0 +1,33 @@
+.HistoryPage__wrapper {
+  background-color: white;
+  color: black;
+  border: 1px solid;
+  padding: 1rem;
+  height: 6rem;
+  position: absolute;
+  top: 6.3rem;
+  width: 100%;
+  .HistoryPage__header {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .HistoryPage__header__span {
+    color: #05a;
+    padding-left: 1rem;
+  }
+  .HistoryPage__main_container {
+    text-align: center;
+    .HistoryPage__main_content {
+      font-weight: 500;
+      font-size: 24px;
+      display: block;
+      color: #444;
+    }
+    .HistoryPage__main_sub_content {
+      font-size: 14px;
+      margin: 0;
+      color: #767676;
+      white-space: normal;
+    }
+  }
+}

@@ -1,6 +1,9 @@
+import { useState } from "react";
 import styles from "./SubHeader.module.scss";
+import HistoryPage from "../HistoryPage/HistoryPage";
 
 function SubHeader() {
+  const [toggle, setToggle] = useState(false);
   return (
     <div className={styles.SubHeader__wrapper}>
       <div className={styles.SubHeader__container}>
@@ -13,7 +16,12 @@ function SubHeader() {
         <div>AMAN's Amazon.com</div>
         <div>Customer Service</div>
         <div>Gift Cards</div>
-        <div className={styles.SubHeader__browsing__history__container}>
+        <div
+          className={styles.SubHeader__browsing__history__container}
+          onMouseEnter={() => {
+            setToggle(true);
+          }}
+        >
           Browsing History
           <i
             class={`bi bi-caret-down-fill ${styles.SubHeader__browsing__history__icon}`}
@@ -22,6 +30,7 @@ function SubHeader() {
         <div>Registry</div>
         <div>Sell</div>
       </div>
+      {toggle ? <HistoryPage /> : null}
     </div>
   );
 }

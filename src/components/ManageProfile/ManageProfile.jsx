@@ -1,17 +1,17 @@
 import styles from "./ManageProfile.module.scss";
 
 function ManageProfile() {
-  const left_section = ["create a list", "find a list or registry"];
+  const left_section = ["Create a list", "Find a list or registry"];
   const right_section = [
-    "accounts",
-    "orders",
-    "recommondations",
-    "browser history",
-    "watchlists",
-    "video purchases & Rental",
-    "Kindle unlimited",
-    "content & devices",
-    "Subscribe & save items",
+    "Accounts",
+    "Orders",
+    "Recommondations",
+    "Browser History",
+    "Watchlists",
+    "Video Purchases & Rental",
+    "Kindle Unlimited",
+    "Content & Devices",
+    "Subscribe & Save items",
     "Memberships & Subscription",
     "Music Library",
     "Switch Accounts",

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SearchBar.module.scss";
 import amazonImage from "../../assests/amazonIcon.png";
 import ManageProfile from "../ManageProfile/ManageProfile";
 
 function SearchBar() {
+  const [toggle, setToggle] = useState(false);
   return (
     <div className={styles.SearchBar__wrapper}>
       <div className={styles.SearchBar__amazon__icon}>
@@ -43,6 +44,7 @@ function SearchBar() {
       <div className={styles.SearchBar__dropdown__login__greetings__wrapper}>
         <div
           className={styles.SearchBar__dropdown__login__greeetings__container}
+          onMouseEnter={() => setToggle(true)}
         >
           <div className={styles.SearchBar__dropdown__login__greetings}>
             HELLO AMAN
@@ -58,8 +60,8 @@ function SearchBar() {
             ></i>
           </div>
         </div>
-        <ManageProfile />
       </div>
+      {toggle ? <ManageProfile /> : null}
       <div className={styles.SearchBar__return__wrapper}>
         <div className={styles.SearchBar__return__container}>
           Returns
