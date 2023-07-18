@@ -44,7 +44,8 @@ function SearchBar() {
       <div className={styles.SearchBar__dropdown__login__greetings__wrapper}>
         <div
           className={styles.SearchBar__dropdown__login__greeetings__container}
-          onMouseEnter={() => setToggle(true)}
+          onMouseOver={() => setToggle(true)}
+          onMouseOut={() => setToggle(false)}
         >
           <div className={styles.SearchBar__dropdown__login__greetings}>
             HELLO AMAN
@@ -61,7 +62,7 @@ function SearchBar() {
           </div>
         </div>
       </div>
-      {toggle ? <ManageProfile /> : null}
+      {toggle ? <ManageProfile setToggle={setToggle} /> : null}
       <div className={styles.SearchBar__return__wrapper}>
         <div className={styles.SearchBar__return__container}>
           Returns

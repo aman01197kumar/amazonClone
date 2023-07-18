@@ -1,0 +1,25 @@
+.AmazonBrief__wrapper {
+  background-color: #232f3e;
+  color: #fff;
+  padding: 2rem 10rem;
+  display: flex;
+  justify-content: space-around;
+  .AmazonBrief__wrapper__container {
+    .AmazonBrief__heading {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 6px 0 14px 0;
+    }
+    .AmazonBrief__subtitle__container {
+      //   width: 80%;
+      .AmazonBrief__subtitles {
+        margin: 0 0 10px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.AmazonBrief__subtitles:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

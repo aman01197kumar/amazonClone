@@ -1,6 +1,6 @@
 import styles from "./ManageProfile.module.scss";
 
-function ManageProfile() {
+function ManageProfile({ setToggle }) {
   const left_section = ["Create a list", "Find a list or registry"];
   const right_section = [
     "Accounts",
@@ -18,7 +18,11 @@ function ManageProfile() {
     "Sign out",
   ];
   return (
-    <div className={styles.ManageProfile__profile__container}>
+    <div
+      className={styles.ManageProfile__profile__container}
+      onMouseEnter={() => setToggle(true)}
+      onMouseOut={() => setToggle(false)}
+    >
       <div className={styles.ManageProfile__profile__wrapper}>
         <div className={styles.ManageProfile__profile__wrapper__profile}>
           Who's shopping?Select your profile

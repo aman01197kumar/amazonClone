@@ -1,15 +1,17 @@
 import React from "react";
 import Header from "../Header/Header";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-
+import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/a11y";
 import styles from "./LandingPage.module.scss";
+import AccessoriesBox1 from "../../AccessoriesBox1/AccessoriesBox1";
+import Footer from "../../Footer/Footer";
 
-// SwiperCore.use([Navigation, Pagination, A11y]);
+SwiperCore.use([Navigation, Pagination, A11y]);
 
 export default function LandingPage() {
   const slide_img = [
@@ -21,29 +23,34 @@ export default function LandingPage() {
   ];
 
   return (
-    <>
+    <div className={styles.LandingPage__wrapper}>
       <Header />
       <div className={styles.LandingPage__swiperContainer}>
         <Swiper
-          modules={[Navigation, Pagination, A11y]}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
-          {slide_img.map((item, i) => (
-            <SwiperSlide key={i}>
-              <img
-                src={item}
-                alt={`Slide ${i}`}
-                className={styles.LandingPage__image}
-              />
-            </SwiperSlide>
-          ))}
+          {slide_img.map((item, i) => {
+            return (
+              <SwiperSlide key={i}>
+                <div
+                  style={{
+                    backgroundImage: `url(${item})`,
+                    height: "100vh",
+                    backgroundSize: "cover",
+                  }}
+                ></div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
+        {/* <div>
+          <AccessoriesBox1 />
+        </div> */}
       </div>
-    </>
+      <Footer title="Back to top" />
+    </div>
   );
 }
