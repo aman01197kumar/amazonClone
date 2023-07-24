@@ -1,21 +1,41 @@
 .AmazonServices__wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
-  font-size: 12px;
+  padding: 0rem 5rem;
   background-color: #131a22;
-  padding: 5rem;
-  //   margin: 30px 0 0;
-  text-align: start;
-  align-items: center;
-  .AmazonServices__container {
-    margin: 1rem;
-    padding: 1rem;
-    .AmazonServices__title {
-      color: #fff;
-      font-weight: 600;
-    }
-    .AmazonServices__desc {
-      color: #9e9d9d;
+  font-size: 12px;
+  .AmazonServices__wrapper__container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    text-align: start;
+    align-items: center;
+    .AmazonServices__container {
+      margin: 1rem;
+      padding: 1rem;
+      .AmazonServices__title {
+        color: #fff;
+        font-weight: 600;
+      }
+      .AmazonServices__desc {
+        color: #9e9d9d;
+      }
     }
   }
+  .AmazonServices__footer {
+    color: #fff;
+    .AmazonServices__footer__flex__container {
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+      align-items: center;
+      margin: 0rem 27rem;
+    }
+  }
+  .AmazonServices__footer__copyright {
+    text-align: center;
+  }
+}
+.AmazonServices__container:hover,
+.AmazonServices__footer__flex__container__content:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #9e9d9d;
 }

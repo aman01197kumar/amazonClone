@@ -20,8 +20,8 @@ function ManageProfile({ setToggle }) {
   return (
     <div
       className={styles.ManageProfile__profile__container}
-      onMouseEnter={() => setToggle(true)}
-      onMouseOut={() => setToggle(false)}
+      // onMouseEnter={() => setToggle(true)}
+      onMouseLeave={() => setToggle(false)}
     >
       <div className={styles.ManageProfile__profile__wrapper}>
         <div className={styles.ManageProfile__profile__wrapper__profile}>

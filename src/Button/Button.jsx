@@ -5,7 +5,7 @@ function Button({ title }) {
   return (
     <button
       className={styles.Button_wrapper}
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      onClick={() => window.scrollTo({ top: 0 })}
     >
       {title}
     </button>

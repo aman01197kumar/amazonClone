@@ -8,8 +8,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/a11y";
 import styles from "./LandingPage.module.scss";
-import AccessoriesBox1 from "../../AccessoriesBox1/AccessoriesBox1";
 import Footer from "../../Footer/Footer";
+import AccessoriesBoxes from "../../AccessoriesBoxes/AccessoriesBoxes";
 
 SwiperCore.use([Navigation, Pagination, A11y]);
 
@@ -46,9 +46,9 @@ export default function LandingPage() {
             );
           })}
         </Swiper>
-        {/* <div>
-          <AccessoriesBox1 />
-        </div> */}
+        <div className={styles.LandingPage__Accessories__container}>
+          <AccessoriesBoxes />
+        </div>
       </div>
       <Footer title="Back to top" />
     </div>

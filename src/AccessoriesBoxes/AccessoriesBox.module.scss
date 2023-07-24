@@ -1,0 +1,24 @@
+.AccessoriesBoxes__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+  width: 67%;
+  flex-wrap: wrap;
+  margin: 0rem 13rem;
+  position: absolute;
+  top: -28rem;
+  z-index: 11111;
+  .AccessoriesBoxes__container {
+    // border: 1px solid black;
+    padding: 3rem 6rem;
+    margin-top: 3rem;
+    width: 25%;
+    text-align: center;
+    background-color: white;
+    font-weight: 600;
+  }
+}
+.AccessoriesBoxes__container:hover {
+  box-shadow: 2px 0px 40px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

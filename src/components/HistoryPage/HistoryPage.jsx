@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./HistoryPage.module.scss";
 
-function HistoryPage() {
+function HistoryPage({ setToggle }) {
   return (
-    <div className={styles.HistoryPage__wrapper}>
+    <div
+      className={styles.HistoryPage__wrapper}
+      onMouseLeave={() => setToggle(false)}
+    >
       <div className={styles.HistoryPage__header}>
         Your Browsing History
         <span className={styles.HistoryPage__header__span}>View and Edit</span>

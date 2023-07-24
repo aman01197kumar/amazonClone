@@ -45,7 +45,6 @@ function SearchBar() {
         <div
           className={styles.SearchBar__dropdown__login__greeetings__container}
           onMouseOver={() => setToggle(true)}
-          onMouseOut={() => setToggle(false)}
         >
           <div className={styles.SearchBar__dropdown__login__greetings}>
             HELLO AMAN

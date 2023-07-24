@@ -18,7 +18,7 @@ function SubHeader() {
         <div>Gift Cards</div>
         <div
           className={styles.SubHeader__browsing__history__container}
-          onMouseEnter={() => {
+          onMouseOver={() => {
             setToggle(true);
           }}
         >
@@ -30,7 +30,7 @@ function SubHeader() {
         <div>Registry</div>
         <div>Sell</div>
       </div>
-      {toggle ? <HistoryPage /> : null}
+      {toggle ? <HistoryPage setToggle={setToggle} /> : null}
     </div>
   );
 }
