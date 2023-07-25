@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AccessoriesBox.module.scss";
 import axios from "axios";
-import AccessoriesBox from "../AccessoriesBox/AccessoriesBox";
+// import AccessoriesBox from "../AccessoriesBox/AccessoriesBox";
 import { useNavigate } from "react-router-dom";
 function AccessoriesBoxes() {
   const [data, setData] = useState([]);
@@ -42,16 +42,18 @@ function AccessoriesBoxes() {
   };
   return (
     <div className={styles.AccessoriesBoxes__wrapper}>
-      {Object.keys(data).map((category, i) => {
-        return (
-          <div
-            className={styles.AccessoriesBoxes__container}
-            onClick={() => navigate("/" + category)}
-          >
-            {sentenceCase(category)}
-          </div>
-        );
-      })}
+      <div className={styles.AccessoriesBoxes__wrapper__container}>
+        {Object.keys(data).map((category, i) => {
+          return (
+            <div
+              className={styles.AccessoriesBoxes__container}
+              onClick={() => navigate("/" + category)}
+            >
+              {sentenceCase(category)}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

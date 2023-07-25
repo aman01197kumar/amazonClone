@@ -1,13 +1,15 @@
 .AccessoriesBoxes__wrapper {
-  display: flex;
-  justify-content: space-between;
   margin: 0 1rem;
   width: 67%;
-  flex-wrap: wrap;
   margin: 0rem 13rem;
   position: absolute;
   top: -28rem;
   z-index: 11111;
+  .AccessoriesBoxes__wrapper__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
   .AccessoriesBoxes__container {
     // border: 1px solid black;
     padding: 3rem 6rem;
