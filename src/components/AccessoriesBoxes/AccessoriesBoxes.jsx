@@ -11,7 +11,6 @@ function AccessoriesBoxes() {
   const fetchData = async () => {
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
-      // setData(response.data);
       const newArr = {};
       response?.data?.forEach((item) => {
         if (newArr[item?.category]) {
@@ -46,10 +45,28 @@ function AccessoriesBoxes() {
         {Object.keys(data).map((category, i) => {
           return (
             <div
+              key={i}
               className={styles.AccessoriesBoxes__container}
-              onClick={() => navigate("/" + category)}
+              onClick={() =>
+                navigate("/category/" + category, {
+                  state: { data: { data } },
+                })
+              }
             >
               {sentenceCase(category)}
+              <div className={styles.AccessoriesBoxes__images__container}>
+                {data[category].slice(0, 4).map((item) => (
+                  <div className={styles.AccessoriesBoxes__images}>
+                    <img
+                      src={item.image}
+                      key={item.id}
+                      height="100px"
+                      width="100px"
+                      alt={item.title}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           );
         })}

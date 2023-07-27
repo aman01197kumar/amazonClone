@@ -7,7 +7,7 @@ function Button({ title }) {
       className={styles.Button_wrapper}
       onClick={() => window.scrollTo({ top: 0 })}
     >
-      {title}
+      Back to Top
     </button>
   );
 }

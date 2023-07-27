@@ -1,6 +1,7 @@
 import React from "react";
-import SearchBar from "../SearchBar/SearchBar";
+// import SearchBar from "../Screens/SearchBar/SearchBar";
 import SubHeader from "../SubHeader/SubHeader";
+import SearchBar from "../SearchBar/SearchBar";
 
 function Header() {
   return (

@@ -1,0 +1,51 @@
+.CategoryBox__wrapper {
+  border: 1px solid;
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  width: 33.33%;
+  .CategoryBox__image {
+    background-color: #f7f7f7;
+  }
+  .CategoryBox__container {
+    padding-top: 1rem;
+    width: 100%;
+    text-align: center;
+    .CategoryBox__title {
+      font-weight: 500;
+    }
+    .CategoryBox__popularity__container {
+      display: flex;
+      color: #007185;
+      font-size: 14px !important;
+      line-height: 20px !important;
+      justify-content: space-between;
+      font-weight: 500;
+      width: 24%;
+      margin: 0rem auto;
+    }
+    .CategoryBox__currency {
+      display: flex;
+      margin: 1rem 0rem;
+      justify-content: center;
+      .CategoryBox__currency__icon {
+        font-size: 20px;
+      }
+      .CategoryBox__currency__value {
+        font-size: 4rem;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.CategoryBox__wrapper:hover {
+  cursor: pointer;
+}
+.CategoryBox__title:hover,
+.CategoryBox__count:hover {
+  color: rgb(196, 181, 97);
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Header/Header";
+import Header from "../../Header/Header";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/a11y";
 import styles from "./LandingPage.module.scss";
-import Footer from "../../Footer/Footer";
+import Footer from "../../../Footer/Footer";
 import AccessoriesBoxes from "../../AccessoriesBoxes/AccessoriesBoxes";
 
 SwiperCore.use([Navigation, Pagination, A11y]);
