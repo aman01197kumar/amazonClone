@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AccessoriesBox.module.scss";
 import axios from "axios";
-// import AccessoriesBox from "../AccessoriesBox/AccessoriesBox";
 import { useNavigate } from "react-router-dom";
 function AccessoriesBoxes() {
   const [data, setData] = useState([]);
-  const [obj, setObj] = useState([]);
 
   const navigate = useNavigate();
   const fetchData = async () => {
@@ -28,9 +26,6 @@ function AccessoriesBoxes() {
   useEffect(() => {
     fetchData();
   }, []);
-  useEffect(() => {
-    setObj(Object.keys(data));
-  }, [data]);
 
   const sentenceCase = (str) => {
     const words = str.split(" ");

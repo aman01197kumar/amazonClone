@@ -2,13 +2,12 @@ import React from "react";
 import styles from "./CategoryBoxes.module.scss";
 import { useLocation, useParams } from "react-router-dom";
 import Header from "../../Header/Header";
-import Footer from "../../../Footer/Footer";
+import Footer from "../../Footer/Footer";
 import CategoryBox from "../../CategoryBox/CategoryBox";
 function CategoryBoxes() {
   const location = useLocation();
   const { category } = useParams();
   const { data } = location.state;
-  console.log(data.data, "data");
   return (
     <div className={styles.Category__wrapper}>
       <Header />
@@ -22,6 +21,7 @@ function CategoryBoxes() {
               description={item.description}
               price={item.price}
               rating={item.rating}
+              category={item.category}
             />
           );
         })}

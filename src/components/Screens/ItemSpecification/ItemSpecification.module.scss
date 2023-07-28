@@ -1,0 +1,94 @@
+.ItemSpecification__container {
+  display: flex;
+  margin: 3rem;
+  justify-content: space-between;
+  width: 75%;
+  .ItemSpecification__container__item__image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .ItemSpecification__container__item__content {
+    font-size: 14px;
+    line-height: 20px;
+    width: 90%;
+    .ItemSpecification__container__item__content__container {
+      border-bottom: 1px solid;
+      //   margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      .ItemSpecification__container__item__content__title {
+        font-size: 24px !important;
+        line-height: 32px !important;
+      }
+      .ItemSpecification__container__item__popularity__container {
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        font-weight: 400;
+        .ItemSpecification__container__item__popularity__container__count {
+          color: rgb(91, 91, 160);
+        }
+      }
+    }
+    .ItemSpecification__container__item__content__price {
+      display: flex;
+      padding: 1rem 0rem;
+      border-bottom: 1px solid;
+      .ItemSpecification__container__item__content__price__value {
+        font-size: 30px;
+        color: green;
+      }
+    }
+    .ItemSpecification__container__description__wrapper {
+      padding: 1rem 0rem;
+      border-bottom: 1px solid;
+      .ItemSpecification__container__description__header {
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 1rem 0rem;
+      }
+    }
+    .ItemSpecification__container__cart__wrapper {
+      padding: 1rem 0rem;
+      .ItemSpecification__container__cart__select__field {
+        display: flex;
+        justify-content: space-between;
+        width: 22%;
+        align-items: center;
+        select {
+          width: 40%;
+          height: 1.75rem;
+          border: 1px solid #cdc6c6;
+          border-radius: 2px;
+        }
+      }
+      .ItemSpecification__container__cart__button__wrapper {
+        padding: 1rem 0rem;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        .ItemSpecification__container__cart__button__add__to__cart {
+          margin-bottom: 0.5rem;
+          background: gold;
+          padding: 0.5rem;
+          border: none;
+          border-radius: 15px;
+          &:hover {
+            background-color: rgb(228, 212, 68);
+            cursor: pointer;
+          }
+        }
+        .ItemSpecification__container__cart__button__buy__now {
+          background: orange;
+          padding: 0.5rem;
+          border: none;
+          border-radius: 15px;
+          &:hover {
+            background-color: rgb(218, 120, 40);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

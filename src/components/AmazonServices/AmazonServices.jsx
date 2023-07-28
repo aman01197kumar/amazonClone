@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./AmazonServices.module.scss";
-import { amazonServicesData } from "../../Data/amazonServicesData";
+import { amazonServicesData } from "../Data/amazonServicesData";
 
 function AmazonServices() {
   return (
