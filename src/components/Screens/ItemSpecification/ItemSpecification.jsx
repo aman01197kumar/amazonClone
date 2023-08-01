@@ -3,19 +3,33 @@ import { useLocation } from "react-router-dom";
 import styles from "./ItemSpecification.module.scss";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  CalculateAmount,
+  CalculateQuantity,
+  calculateAmount,
+  calculateQuantity,
+  findId,
+  pushArray,
+  // updateArray,
+  updateCart,
+  updateItem,
+} from "../../../store/cart";
 
 function ItemSpecification() {
   const [showStars, setShowStars] = useState(null);
   const [itemCount, setItemCount] = useState(1);
   const [addItem, setAddItem] = useState([]);
-
+  const dispatch = useDispatch();
   const location = useLocation();
-  const { title, description, image, rating, price } = location.state;
+  const { title, description, image, rating, price, itemId } = location.state;
   const objItem = {
+    id: itemId,
     quantity: itemCount,
     title: title,
-    price: price * itemCount,
+    price: itemCount * price,
   };
+  console.log(itemId, "id");
   const cart_count = [1, 2, 3, 4, 5, 6];
   const StarIcon = ({ isFilled }) => (
     <i
@@ -34,30 +48,45 @@ function ItemSpecification() {
     }
     setShowStars(stars);
   };
-  console.log(itemCount, "itr");
+
   useEffect(() => {
     renderStars();
   }, []);
 
   const str = description.replace(/;/g, ";\n").replace(/;/g, ".");
   const arr = str.split("\n");
-  console.log(objItem, "obj");
-  // const addToCartHandler = () => {
-  //   console.log("hehe");
-  //   addItem.push(objItem);
-  // };
-  function addToCartHandler() {
-    addItem.forEach((item) => {
-      if (objItem[item.title]) {
-        objItem[item.title].push(item);
-      } else {
-        objItem[item.title] = [item];
-      }
-    });
-    setAddItem([objItem]);
-  }
-  console.log(addItem);
 
+  function addToCartHandler() {
+    const keyExists = addItem.findIndex((item) => item.id === objItem.id);
+
+    if (keyExists === -1) {
+      // Item doesn't exist, add a new item with quantity and price
+      // dispatch(pushArray(objItem));
+      setAddItem((prev) => [...prev, objItem]);
+    } else {
+      // Item already exists, update the quantity and price
+      addItem[keyExists].quantity = objItem.quantity;
+      addItem[keyExists].price = objItem.price;
+      // setAddItem((prev) => [...prev, updatedItem]);
+      // dispatch(pushArray(updatedItem));
+    }
+  }
+
+  console.log(addItem, "add");
+  // useEffect(() => {
+  // }, [price, itemCount]);
+  // useEffect(() => {
+  //   // console.log(dispatch(calculateAmount(objItem.price)));
+  //   // console.log(objItem.price, "price");
+  // }, [objItem, dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(calculateQuantity(objItem.quantity));
+  // }, [objItem, dispatch]);
+
+  // usss
+  const { cartArray } = useSelector((state) => state.shoppingCart);
+  // console.log(cartArray, "arrat");
   return (
     <div className={styles.ItemSpecification__wrapper}>
       <Header />

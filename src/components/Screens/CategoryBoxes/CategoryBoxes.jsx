@@ -22,6 +22,7 @@ function CategoryBoxes() {
               price={item.price}
               rating={item.rating}
               category={item.category}
+              itemId={item.id}
             />
           );
         })}

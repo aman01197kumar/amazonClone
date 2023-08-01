@@ -2,7 +2,16 @@ import React, { useEffect, useState } from "react";
 import styles from "./CategoryBox.module.scss";
 import { useNavigate } from "react-router-dom";
 
-function CategoryBox({ title, image, description, price, rating, category }) {
+function CategoryBox({
+  title,
+  image,
+  description,
+  price,
+  rating,
+  category,
+  itemId,
+}) {
+  // console.log(itemId, "itrm");
   const [showStars, setShowStars] = useState(null);
   const navigate = useNavigate();
   const StarIcon = ({ isFilled }) => (
@@ -37,7 +46,7 @@ function CategoryBox({ title, image, description, price, rating, category }) {
   return (
     <div
       className={styles.CategoryBox__wrapper}
-      onClick={() =>
+      onClick={(id) =>
         navigate(`/category/${category}/${title}`, {
           state: {
             title: title,
@@ -46,6 +55,7 @@ function CategoryBox({ title, image, description, price, rating, category }) {
             price: price,
             rating: rating,
             category: category,
+            itemId: itemId,
             // stars: showStars,
           },
         })
