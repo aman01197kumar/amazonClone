@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./AmazonBrief.module.scss";
-import { amazonBriefData } from "../Data/amazonBriefData";
+import { amazonBriefData } from "../../Data/amazonBriefData";
 
 function AmazonBrief() {
   return (

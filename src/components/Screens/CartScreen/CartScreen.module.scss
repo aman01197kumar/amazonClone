@@ -1,0 +1,57 @@
+.CartScreen__wrapper {
+  background-color: #eaeded;
+  .CartScreen__wrapper__cart__screen {
+    margin: 2rem;
+
+    .CartScreen__container {
+      display: flex;
+      // width: 90%;
+      justify-content: space-between;
+      .CartScreen__item__container {
+        background-color: #fff;
+        width: 70%;
+        // border: 1px solid;
+        padding: 1rem;
+        .CartScreen__wrapper__container__header {
+          // padding-bottom: 1rem;
+          border-bottom: 1px solid #dddddd;
+          .CartScreen__wrapper__container__header__title {
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 36px;
+          }
+          .CartScreen__wrapper__container__header__delete__btn {
+            color: #007185;
+            font-family: "Amazon Ember", Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            width: fit-content;
+            &:hover {
+              color: #f0860e;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+        .CartScreen__wrapper__container__container {
+          padding-top: 1rem;
+        }
+      }
+      .CartScreen__message {
+        display: flex;
+        justify-content: center;
+        margin: 5rem;
+        padding: 10rem;
+        border: 1px solid;
+        border-radius: 8px;
+        font-size: 2rem;
+        // font-weight: 500;
+      }
+      .CartScreen__cart__summary__card {
+        border: 1px solid;
+        padding: 3rem;
+        height: 20vh;
+      }
+    }
+  }
+}

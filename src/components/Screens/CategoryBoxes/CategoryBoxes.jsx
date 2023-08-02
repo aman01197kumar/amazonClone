@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./CategoryBoxes.module.scss";
 import { useLocation, useParams } from "react-router-dom";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import CategoryBox from "../../CategoryBox/CategoryBox";
+import Header from "../../Utilites/Header/Header";
+import Footer from "../../Utilites/Footer/Footer";
+import CategoryBox from "../../Utilites/CategoryBox/CategoryBox";
 function CategoryBoxes() {
   const location = useLocation();
   const { category } = useParams();

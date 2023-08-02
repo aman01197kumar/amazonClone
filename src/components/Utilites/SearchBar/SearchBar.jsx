@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import styles from "./SearchBar.module.scss";
-import amazonImage from "../../assests/amazonIcon.png";
+import amazonImage from "../../../assests/amazonIcon.png";
 import ManageProfile from "../ManageProfile/ManageProfile";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const [toggle, setToggle] = useState(false);
+  const { cartArray } = useSelector((state) => state.shoppingCart);
+  const navigate = useNavigate();
+  const findTotalQuantity = (arr) => {
+    return arr.reduce((curr, acc) => {
+      return (curr += acc.quantity);
+    }, 0);
+  };
+  const quantitySum = findTotalQuantity(cartArray);
   return (
     <div className={styles.SearchBar__wrapper}>
-      <div className={styles.SearchBar__amazon__icon}>
+      <div
+        className={styles.SearchBar__amazon__icon}
+        onClick={() => navigate("/")}
+      >
         <img src={amazonImage} alt="amazonImage" />
       </div>
       <div className={styles.SearchBar__delivery__country__wrapper}>
@@ -70,7 +83,13 @@ function SearchBar() {
           </span>
         </div>
       </div>
-      <div className={styles.SearchBar__cart__icon}>
+      <div
+        className={styles.SearchBar__cart__icon}
+        onClick={() => navigate("/cart")}
+      >
+        {quantitySum > 0 ? (
+          <div className={styles.SearchBar_cart__count}>{quantitySum}</div>
+        ) : null}
         <i class={`bi bi-cart ${styles.SearchBar__cart__icons}`} />
         Cart
       </div>

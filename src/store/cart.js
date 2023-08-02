@@ -12,26 +12,21 @@ export const cart = createSlice({
   reducers: {
     calculateAmount: (state, action) => {
       state.totalAmount = action.payload;
-      // console.log(state.totalAmount,'totalMan')
     },
     calculateQuantity: (state, action) => {
       state.quantity = action.payload;
     },
     pushArray: (state, action) => {
-      state.cartArray.push(action.payload);
-    },
-    // console.log()
-    updateCart: (state, action) => {
-      const { id, quantity, price } = action.payload;
-      const roomIndex = state.cartArray.findIndex((item) => item.id === id);
-      console.log(state.payload.totalAmount, "totl");
-
-      if (roomIndex !== -1) {
-        state.cartArray[roomIndex].quantity = state.totalAmount;
-        state.cartArray[roomIndex].price = price;
+      let find = state.cartArray.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (find >= 0) {
+        state.cartArray[find].quantity = action.payload.quantity;
+        state.cartArray[find].price = action.payload.price;
+      } else {
+        state.cartArray.push(action.payload);
       }
     },
-    // console.log(id, quantity, price);
   },
 });
 
