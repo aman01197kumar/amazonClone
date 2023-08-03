@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../Utilites/Header/Header";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import SwiperCore from "swiper";
@@ -14,6 +14,7 @@ import AccessoriesBoxes from "../../Utilites/AccessoriesBoxes/AccessoriesBoxes";
 SwiperCore.use([Navigation, Pagination, A11y]);
 
 export default function LandingPage() {
+  const [title, setTitle] = useState([]);
   const slide_img = [
     "https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg",
     "https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg",
@@ -21,10 +22,10 @@ export default function LandingPage() {
     "https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg",
     "https://m.media-amazon.com/images/I/61zAjw4bqPL._SX3000_.jpg",
   ];
-
+  // console.log(title, "title");
   return (
     <div className={styles.LandingPage__wrapper}>
-      <Header />
+      <Header title={title} />
       <div className={styles.LandingPage__swiperContainer}>
         <Swiper
           slidesPerView={1}
@@ -47,7 +48,7 @@ export default function LandingPage() {
           })}
         </Swiper>
         <div className={styles.LandingPage__Accessories__container}>
-          <AccessoriesBoxes />
+          <AccessoriesBoxes setTitle={setTitle} />
         </div>
       </div>
       <Footer title="Back to top" />

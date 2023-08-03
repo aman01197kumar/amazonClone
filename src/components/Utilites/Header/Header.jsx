@@ -3,10 +3,10 @@ import React from "react";
 import SubHeader from "../SubHeader/SubHeader";
 import SearchBar from "../SearchBar/SearchBar";
 
-function Header() {
+function Header({ title }) {
   return (
     <div>
-      <SearchBar />
+      <SearchBar title={title} />
       <SubHeader />
     </div>
   );

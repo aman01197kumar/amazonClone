@@ -11,14 +11,6 @@ function CartScreen() {
   const [items, setItems] = useState([]);
   const dispatch = useDispatch();
   const { cartArray } = useSelector((state) => state.shoppingCart);
-  //   console.log(cartArray, "arr");
-
-  //   useEffect(() => {
-  //     const items = JSON.parse(localStorage.getItem("items"));
-  //     if (items) {
-  //       setItems(items);
-  //     }
-  //   }, []);
   console.log(items, "vmdk");
   const calculateTotalQuantity = (arr) => {
     return arr.reduce((curr, acc) => {
@@ -42,7 +34,7 @@ function CartScreen() {
 
   return (
     <div className={styles.CartScreen__wrapper}>
-      <Header />
+          <Header/>
       <div className={styles.CartScreen__wrapper__cart__screen}>
         {cartArray.length > 0 ? (
           <div className={styles.CartScreen__container}>

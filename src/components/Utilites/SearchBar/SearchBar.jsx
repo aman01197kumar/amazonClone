@@ -5,7 +5,7 @@ import ManageProfile from "../ManageProfile/ManageProfile";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-function SearchBar() {
+function SearchBar({ title }) {
   const [toggle, setToggle] = useState(false);
   const { cartArray } = useSelector((state) => state.shoppingCart);
   const navigate = useNavigate();
@@ -14,6 +14,8 @@ function SearchBar() {
       return (curr += acc.quantity);
     }, 0);
   };
+  title.unshift("All");
+  // console.log(title, "til");
   const quantitySum = findTotalQuantity(cartArray);
   return (
     <div className={styles.SearchBar__wrapper}>
@@ -33,9 +35,9 @@ function SearchBar() {
       <div className={styles.Searchbar__container__wrapper}>
         <div className={styles.SearchBar__container}>
           <select className={styles.SearchBar__dropdown__btn}>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
+            {title?.map((item) => {
+              return <option value={item}>{item}</option>;
+            })}
           </select>
           <input
             type="text"
