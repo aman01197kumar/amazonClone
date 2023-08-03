@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CartBox.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { removeCartItem } from "../../../store/cart";
 
-function CartBox({ title, image, price_per_item, price, quantity }) {
-  console.log(image, "image");
-  function trimExtras(str) {
-    const newStr = str.split("");
-    if (newStr.length >= 44) {
-      return newStr.slice(0, 44).join("") + "...";
-    }
-    return str;
-    // return newStr
-  }
+function CartBox({ title, image, price_per_item, price, id }) {
+  const dispatch = useDispatch();
+  const { cartArray } = useSelector((state) => state.shoppingCart);
+  console.log(cartArray);
+  const removeItemHandler = (id) => {
+    console.log(id);
+    dispatch(removeCartItem(id));
+  };
+
   return (
     <div className={styles.CartBox__wrapper}>
       <div className={styles.CartBox__image__container}>
@@ -42,13 +43,11 @@ function CartBox({ title, image, price_per_item, price, quantity }) {
             </div>
           </div>
         </div>
-        {/* <div className={styles.CartBox__detail__container__dropdown__btn}>
-                      <select>
-                          
-                </select>
-              </div> */}
       </div>
-      <div className={styles.CartBox__delete__item__btn}>
+      <div
+        className={styles.CartBox__delete__item__btn}
+        onClick={() => removeItemHandler(id)}
+      >
         <i class="bi bi-trash3-fill" />
       </div>
     </div>

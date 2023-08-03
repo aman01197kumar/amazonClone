@@ -51,8 +51,8 @@ function ItemSpecification() {
 
     dispatch(pushArray(objItem));
   }
-
   const { cartArray } = useSelector((state) => state.shoppingCart);
+  // console.log(cartArray, "arr");
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(cartArray));
   }, [cartArray]);

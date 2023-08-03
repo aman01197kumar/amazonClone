@@ -37,21 +37,19 @@
           padding-top: 1rem;
         }
       }
-      .CartScreen__message {
-        display: flex;
-        justify-content: center;
-        margin: 5rem;
-        padding: 10rem;
-        border: 1px solid;
-        border-radius: 8px;
-        font-size: 2rem;
-        // font-weight: 500;
-      }
       .CartScreen__cart__summary__card {
         border: 1px solid;
         padding: 3rem;
         height: 20vh;
       }
     }
+  }
+  .CartScreen__message {
+    background: white;
+    display: flex;
+    justify-content: center;
+    padding: 10rem;
+    font-size: 2rem;
+    // font-weight: 500;
   }
 }

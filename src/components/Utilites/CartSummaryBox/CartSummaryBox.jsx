@@ -9,7 +9,7 @@ function CartSummaryBox({ totalQuantity, totalAmount }) {
           Subtotal({totalQuantity}):
           <span className={styles.CartSummaryBox__total__quantity__figure}>
             <i class="bi bi-currency-rupee" />
-            {totalAmount}
+            {totalAmount.toFixed(2)}
           </span>
         </div>
       </div>

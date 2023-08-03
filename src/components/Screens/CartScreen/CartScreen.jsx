@@ -1,38 +1,50 @@
 import React, { useEffect, useState } from "react";
 import styles from "./CartScreen.module.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../../Utilites/Header/Header";
 import Footer from "../../Utilites/Footer/Footer";
 import CartBox from "../../Utilites/CartBox/CartBox";
 import CartSummaryBox from "../../Utilites/CartSummaryBox/CartSummaryBox";
+import { deleteCart } from "../../../store/cart";
 
 function CartScreen() {
   const [items, setItems] = useState([]);
+  const dispatch = useDispatch();
+  const { cartArray } = useSelector((state) => state.shoppingCart);
+  //   console.log(cartArray, "arr");
 
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("items"));
-    if (items) {
-      setItems(items);
-    }
-  }, []);
-
+  //   useEffect(() => {
+  //     const items = JSON.parse(localStorage.getItem("items"));
+  //     if (items) {
+  //       setItems(items);
+  //     }
+  //   }, []);
+  console.log(items, "vmdk");
   const calculateTotalQuantity = (arr) => {
     return arr.reduce((curr, acc) => {
       return (curr += acc.quantity);
     }, 0);
   };
-  const totalQuantity = calculateTotalQuantity(items);
+  const totalQuantity = calculateTotalQuantity(cartArray);
   const calculateTotalAmount = (arr) => {
     return arr.reduce((curr, acc) => {
       return (curr += acc.price);
     }, 0);
   };
-  const totalAmount = calculateTotalAmount(items);
+  const totalAmount = calculateTotalAmount(cartArray);
+
+  const deleteAllHandler = () => {
+    console.log(items);
+    dispatch(deleteCart(items));
+    localStorage.clear();
+    window.location.reload();
+  };
+
   return (
     <div className={styles.CartScreen__wrapper}>
       <Header />
       <div className={styles.CartScreen__wrapper__cart__screen}>
-        {items.length > 0 ? (
+        {cartArray.length > 0 ? (
           <div className={styles.CartScreen__container}>
             <div className={styles.CartScreen__item__container}>
               <div className={styles.CartScreen__wrapper__container__header}>
@@ -47,6 +59,7 @@ function CartScreen() {
                   className={
                     styles.CartScreen__wrapper__container__header__delete__btn
                   }
+                  onClick={deleteAllHandler}
                 >
                   Delete All
                 </div>
@@ -54,7 +67,7 @@ function CartScreen() {
               <div
                 className={styles.CartScreen__wrapper__container__container}
               ></div>
-              {items?.map((item) => {
+              {cartArray?.map((item) => {
                 return (
                   <CartBox
                     key={item.id}
@@ -63,6 +76,7 @@ function CartScreen() {
                     price_per_item={item.price_per_item}
                     price={item.price}
                     quantity={item.quantity}
+                    id={item.id}
                   />
                 );
               })}
