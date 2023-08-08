@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import styles from "./AccessoriesBox.module.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { pushTitleArray } from "../../../store/title";
 function AccessoriesBoxes({ setTitle }) {
   const [data, setData] = useState([]);
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const fetchData = async () => {
@@ -28,7 +31,7 @@ function AccessoriesBoxes({ setTitle }) {
   }, []);
 
   useEffect(() => {
-    setTitle(Object.keys(data));
+    dispatch(pushTitleArray(Object.keys(data)));
   }, [data]);
   // console.log(, "data");
   const sentenceCase = (str) => {

@@ -25,7 +25,7 @@ export default function LandingPage() {
   // console.log(title, "title");
   return (
     <div className={styles.LandingPage__wrapper}>
-      <Header title={title} />
+      {/* <Header title={title} /> */}
       <div className={styles.LandingPage__swiperContainer}>
         <Swiper
           slidesPerView={1}

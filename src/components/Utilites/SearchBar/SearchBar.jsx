@@ -14,8 +14,15 @@ function SearchBar({ title }) {
       return (curr += acc.quantity);
     }, 0);
   };
-  title.unshift("All");
-  // console.log(title, "til");
+  // const newArr = [];
+  // if (typeof title[0] !== "undefined") {
+  //   newArr = title.unshift("All");
+  // }
+  // console.log(newArr, "til");
+  if (title) {
+    title.unshift("All");
+  }
+  console.log(title, "klml");
   const quantitySum = findTotalQuantity(cartArray);
   return (
     <div className={styles.SearchBar__wrapper}>
