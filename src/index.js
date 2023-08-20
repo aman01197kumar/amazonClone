@@ -6,10 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import persistStore from "redux-persist/es/persistStore";
+// import persistStore from "redux-persist/es/persistStore";
 import { PersistGate } from "redux-persist/integration/react";
+<<<<<<< HEAD
 
 
+=======
+// import persistStore from "redux-persist/es/persistStore";
+import persistStore from "redux-persist/es/persistStore";
+>>>>>>> origin
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const peristor = persistStore(store)
 root.render(
@@ -17,8 +22,13 @@ root.render(
 
     <PersistGate persistor={peristor}>
 
+<<<<<<< HEAD
     <App />
       </PersistGate>
+=======
+      <App />
+    </PersistGate>
+>>>>>>> origin
   </Provider>
 );
 
