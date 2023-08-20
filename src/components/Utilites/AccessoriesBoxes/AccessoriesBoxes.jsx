@@ -12,6 +12,7 @@ function AccessoriesBoxes({ setTitle }) {
   const fetchData = async () => {
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
+      console.log(response.data);
       const newArr = {};
       response?.data?.forEach((item) => {
         if (newArr[item?.category]) {
