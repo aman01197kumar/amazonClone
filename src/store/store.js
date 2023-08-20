@@ -10,9 +10,10 @@ const persistConfig = {
 }
 
 const reducer = combineReducers({
-
   shoppingCart: cart,
 })
+
+
 const persistedReducer = persistReducer(persistConfig,reducer)
 export const store = configureStore({
   reducer: persistedReducer

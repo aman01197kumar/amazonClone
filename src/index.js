@@ -8,12 +8,19 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import persistStore from "redux-persist/es/persistStore";
 import { PersistGate } from "redux-persist/integration/react";
+import persistStore from "redux-persist/es/persistStore";
+<<<<<<<<< Temporary merge branch 1
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const peristor = persistStore(store)
 root.render(
   <Provider store={store}>
-    <PersistGate  peristor = {peristor}>
+<<<<<<<<< Temporary merge branch 1
+    <PersistGate persistor={peristor  }>
+=========
+    <PersistGate persistor={peristor}>
+
+>>>>>>>>> Temporary merge branch 2
     <App />
       </PersistGate>
   </Provider>
