@@ -14,11 +14,6 @@ function SearchBar({ title }) {
       return (curr += acc.quantity);
     }, 0);
   };
-  // const newArr = [];
-  // if (typeof title[0] !== "undefined") {
-  //   newArr = title.unshift("All");
-  // }
-  // console.log(newArr, "til");
   if (title) {
     title.unshift("All");
   }
